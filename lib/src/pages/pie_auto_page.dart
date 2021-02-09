@@ -21,30 +21,42 @@ class PieAutoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Pie Auto Label'),
-      ),
-      body: new charts.PieChart(seriesList,
-          animate: animate,
-          // Configure the width of the pie slices to 60px. The remaining space in
-          // the chart will be left as a hole in the center.
-          //
-          // [ArcLabelDecorator] will automatically position the label inside the
-          // arc if the label will fit. If the label will not fit, it will draw
-          // outside of the arc with a leader line. Labels can always display
-          // inside or outside using [LabelPosition].
-          //
-          // Text style for inside / outside can be controlled independently by
-          // setting [insideLabelStyleSpec] and [outsideLabelStyleSpec].
-          //
-          // Example configuring different styles for inside/outside:
-          //       new charts.ArcLabelDecorator(
-          //          insideLabelStyleSpec: new charts.TextStyleSpec(...),
-          //          outsideLabelStyleSpec: new charts.TextStyleSpec(...)),
-          defaultRenderer: new charts.ArcRendererConfig(
-              arcWidth: 60,
-              arcRendererDecorators: [new charts.ArcLabelDecorator()])),
-    );
+        appBar: AppBar(
+          title: Text('Pie Auto Label'),
+        ),
+        body: new charts.PieChart(seriesList,
+            animate: animate,
+            behaviors: [
+              charts.ChartTitle('lkj'),
+            ],
+            // Configure the width of the pie slices to 60px. The remaining space in
+            // the chart will be left as a hole in the center.
+            //
+            // [ArcLabelDecorator] will automatically position the label inside the
+            // arc if the label will fit. If the label will not fit, it will draw
+            // outside of the arc with a leader line. Labels can always display
+            // inside or outside using [LabelPosition].
+            //
+            // Text style for inside / outside can be controlled independently by
+            // setting [insideLabelStyleSpec] and [outsideLabelStyleSpec].
+            //
+            // Example configuring different styles for inside/outside:
+            //       new charts.ArcLabelDecorator(
+            //          insideLabelStyleSpec: new charts.TextStyleSpec(...),
+            //          outsideLabelStyleSpec: new charts.TextStyleSpec(...)),
+            defaultRenderer: new charts.ArcRendererConfig(
+                arcWidth: 60,
+                arcRendererDecorators: [
+                  new charts.ArcLabelDecorator(
+                      insideLabelStyleSpec: new charts.TextStyleSpec(
+                        fontSize: 20,
+                        color: charts.ColorUtil.fromDartColor(Colors.white),
+                      ),
+                      outsideLabelStyleSpec:
+                          new charts.TextStyleSpec(fontSize: 20),
+                      leaderLineColor:
+                          charts.ColorUtil.fromDartColor(Colors.orange)),
+                ])));
   }
 
   /// Create one series with sample hard coded data.

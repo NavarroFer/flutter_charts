@@ -23,6 +23,12 @@ class BarChartsSimplePage extends StatelessWidget {
       body: new charts.BarChart(
         seriesList,
         animate: animate,
+        behaviors: [
+          charts.InitialHintBehavior(maxHintTranslate: 4.0),
+          charts.PanAndZoomBehavior(),
+          charts.ChartTitle("Titulo"),
+          charts.SeriesLegend(),
+        ],
       ),
       appBar: AppBar(
         title: Text('Bar Charts - Simple'),

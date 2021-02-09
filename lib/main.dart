@@ -1,4 +1,5 @@
 import 'package:charts/src/pages/bar_charts_simple_page.dart';
+import 'package:charts/src/pages/bar_charts_2.dart';
 import 'package:charts/src/pages/home_page.dart';
 import 'package:charts/src/pages/legends_simple_page.dart';
 import 'package:charts/src/pages/pie_auto_page.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
             PieAutoPage.withSampleData(),
         'lengeds-label': (BuildContext context) =>
             LegendsSimplePage.withSampleData(),
+        'fl-chart': (BuildContext context) => FlChartsPage(),
       },
       theme: ThemeData(
         primaryColor: Utils.hexaToColor("C1403D"),

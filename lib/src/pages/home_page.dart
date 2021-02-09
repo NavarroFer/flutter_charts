@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
               "pie-outside"),
           _rowBtns(context, "Pie Auto Label", "pie-auto-label",
               "Legends Simple", "lengeds-label"),
-          _rowBtns(context, "Other", null, "Another", null),
+          _rowBtns(context, "Other", "fl-chart", "Another", "fl-chart"),
         ],
       ),
     );
